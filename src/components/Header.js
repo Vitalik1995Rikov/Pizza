@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 
 const Header = () => {
   return (
@@ -12,8 +13,8 @@ const Header = () => {
           <div className="text-sm">The best pizza in the world</div>
         </div>
       </div>
-      <div>
-        <button className="">520p</button>
+      <div className="rounded-2xl bg-orange-500 h-8 w-16">
+        <Button outline />
       </div>
     </div>
   );
