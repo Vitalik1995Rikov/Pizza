@@ -65,7 +65,8 @@ const pizzas = [
 
 const Pizza = () => {
   return (
-    <div>
+    <div className="m-5">
+      <span className="text-2xl font-bold">Все пиццы</span>
       <ul className="grid grid-cols-4">
         {pizzas.map((item) => (
           <li>

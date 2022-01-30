@@ -1,13 +1,16 @@
 import React from 'react';
-import Header from './components/Header';
 import Pizza from './components/Pizza';
+import Layout from './layouts/Layout';
+import Filters from './components/Filters';
+// import Basket from './components/Basket';
 
 const App = () => {
   return (
-    <div>
-      <Header />
+    <Layout>
+      <Filters />
       <Pizza />
-    </div>
+      {/* <Basket /> */}
+    </Layout>
   );
 };
 
