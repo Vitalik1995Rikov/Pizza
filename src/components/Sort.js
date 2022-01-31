@@ -3,16 +3,22 @@ import { useState } from 'react';
 
 const Sort = () => {
   const [visiblePopup, setVisiblePopup] = useState(false);
-  console.log(visiblePopup);
+
+  const toogleVisiblePopup = () => {
+    setVisiblePopup(!visiblePopup);
+  };
+
   return (
     <div>
       <span>Сортировка по:</span>
-      <span onClick={() => setVisiblePopup(!visiblePopup)}>популярности</span>
-      <ul className={visiblePopup ? 'hidden' : ''}>
-        <li>популярности</li>
-        <li>алфавиту</li>
-        <li>цене</li>
-      </ul>
+      <span onClick={toogleVisiblePopup}>популярности</span>
+      {visiblePopup && (
+        <ul>
+          <li>популярности</li>
+          <li>алфавиту</li>
+          <li>цене</li>
+        </ul>
+      )}
     </div>
   );
 };
