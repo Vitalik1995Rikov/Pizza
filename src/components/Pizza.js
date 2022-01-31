@@ -69,7 +69,7 @@ const Pizza = () => {
       <span className="text-2xl font-bold">Все пиццы</span>
       <ul className="grid grid-cols-4">
         {pizzas.map((item) => (
-          <li>
+          <li key={item.id}>
             <img className="w-40" src={item.img} alt="img" />
             <span>{item.name}</span>
           </li>
