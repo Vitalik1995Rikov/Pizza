@@ -1,50 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const filters = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
+const filters = ['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
 
-class Filters extends React.Component {
-  state = {
-    activeItem: null,
+const Filters = () => {
+  const [activeItem, setActiveItem] = useState(null);
+
+  const onSelectItem = (index) => {
+    setActiveItem(index);
   };
+  console.log(activeItem);
 
-  onSelectItem = (index) => {
-    this.setState({
-      activeItem: index,
-    });
-  };
-
-  render() {
-    return (
-      <div>
-        <ul className="flex justify-center space-x-10">
-          {filters.map((items, idx) => (
+  return (
+    <div>
+      <ul className="flex justify-center space-x-10">
+        <li
+          onClick={() => onSelectItem(null)}
+          className={activeItem === null ? 'bg-orange-500' : ''}>
+          <button>Все</button>
+        </li>
+        {filters.map((items, idx) => (
+          <ul key={idx}>
             <li
-              key={idx}
-              onClick={() => this.onSelectItem(idx)}
-              className={this.state.activeItem === idx ? 'bg-orange-500' : ''}>
+              onClick={() => onSelectItem(idx)}
+              className={activeItem === idx ? 'bg-orange-500' : ''}>
               <button>{items}</button>
             </li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
-}
-
-// const Filters = ({ onClickItem }) => {
-//   return (
-//     <div>
-//       <ul className="flex justify-center space-x-10">
-//         {filters.map((items, idx) => (
-//           <ul key={idx}>
-//             <li onClick={() => onClickItem(items)} className="space-x-2">
-//               <button>{items}</button>
-//             </li>
-//           </ul>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// };
+          </ul>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default Filters;
