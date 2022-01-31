@@ -8,7 +8,6 @@ const Filters = () => {
   const onSelectItem = (index) => {
     setActiveItem(index);
   };
-  console.log(activeItem);
 
   return (
     <div>
@@ -18,15 +17,16 @@ const Filters = () => {
           className={activeItem === null ? 'bg-orange-500' : ''}>
           <button>Все</button>
         </li>
-        {filters.map((items, idx) => (
-          <ul key={idx}>
-            <li
-              onClick={() => onSelectItem(idx)}
-              className={activeItem === idx ? 'bg-orange-500' : ''}>
-              <button>{items}</button>
-            </li>
-          </ul>
-        ))}
+        {filters &&
+          filters.map((items, idx) => (
+            <ul key={idx}>
+              <li
+                onClick={() => onSelectItem(idx)}
+                className={activeItem === idx ? 'bg-orange-500' : ''}>
+                <button>{items}</button>
+              </li>
+            </ul>
+          ))}
       </ul>
     </div>
   );
