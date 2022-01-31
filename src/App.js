@@ -1,7 +1,7 @@
 import React from 'react';
-import Pizza from './components/Pizza';
+
+import { Pizza, Filters } from './components/';
 import Layout from './layouts/Layout';
-import Filters from './components/Filters';
 // import Basket from './components/Basket';
 
 const App = () => {

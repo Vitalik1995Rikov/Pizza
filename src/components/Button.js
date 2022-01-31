@@ -1,7 +1,6 @@
 import React from 'react';
 
-const Button = (props) => {
-  console.log(props);
+const Button = () => {
   return (
     <div className="flex justify-center ">
       <button>5</button>
